@@ -55,4 +55,46 @@ let  sumBetween = function(number1, number2) {
 }
 
 
+let changeconverter = function(cents) {
+    if (typeof cents !== "number" || cents < 0) {
+        return "Please specify a valid number of cents";
+}
+var numQuarters = Math.floor(cents / 25);
+cents = cents % 25;
+var numDimes = Math.floor(cents / 10);
+cents = cents % 10;
+var numNickels = Math.floor(cents / 5);
+cents = cents % 5;
+var returnString = "";
+if (numQuarters !== 0) {
+    if (numQuarters === 1) {
+        returnString += "1 Quarter";
+    }
+    else {
+        returnString += numQuarters + " Quarters";
+    }
+}
+if (numDimes !== 0) {
+    if (numDimes === 1) {
+        returnString += "\n1 Dime";
+    }
+    else {
+        returnString += "\n" + numDimes + " Dimes";
+    }
+}
+if (numNickels !== 0) {
+    returnString += "\n1 Nickel";
+}
+if (cents !== 0) {
+    if (cents === 1) {
+        returnString += "\n1 penny";
+    }
+    else {
+        returnString += "\n" + cents + " Pennies";
+    }
+}
+
+return returnString;
+}
+
 </script>
