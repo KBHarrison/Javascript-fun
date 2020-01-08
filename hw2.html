@@ -1,0 +1,58 @@
+<script>
+let fibonacci = function(number) {
+if (typeof number !== "number" || number < 0) {
+    return "Sorry, that's not a valid number";
+}
+else if (number === 0) {
+    return 0;
+}
+else  if (number < 3) {
+    return 1;
+}
+var twoBack = 1;
+var oneBack = 1;
+var newVal;
+number -= 2;
+for(i = number; i > 0; i--) {
+    newVal = twoBack + oneBack;
+    twoBack = oneBack;
+    oneBack = newVal;
+}
+return newVal;
+}
+
+
+let factorial = function(number) {
+    if (typeof number !== "number" || number < 0) {
+    return "Sorry, that's not a valid number";
+}
+else if (number < 2) {
+    return 1;
+}
+var value = 1;
+for (i = number; i > 0; i--) {
+    value *= i;
+}
+return value;
+}
+
+let  sumBetween = function(number1, number2) {
+    if (typeof number1 !== "number" || typeof number2 !== "number") {
+    return "Please input two valid numbers.";
+    }
+    if (number1 === number2) {
+        return number1*2;
+    }
+
+    var min = Math.min(number1, number2);
+    var max = Math.max(number1, number2);
+    var total = 0;
+
+    for(i = min; i <= max; i++) {
+        total += i;
+    }
+    return total;
+}
+
+
+</script>
